@@ -8,7 +8,7 @@
 4
 '''
 
-# 시발 ul li:nth-of-type(1) a div.place_box 중에 list[0]
+# ul li:nth-of-type(1) a div.place_box 중에 list[0]
 
 
 # driver.save_screenshot("screenshot.png")
