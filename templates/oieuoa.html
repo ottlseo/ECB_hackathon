@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WTM 좌표를 WGS84 좌표로 변환하기</title>
+
+</head>
+<body>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=d2917a83b590c907345acf0125450382&libraries=services"></script>
+<script>
+
+var geocoder = new kakao.maps.services.Geocoder(), // 좌표계 변환 객체를 생성합니다
+    wtmX = 194977.310569441, // 변환할 WTM X 좌표 입니다
+    wtmY = 450961.900690561; // 변환할 WTM Y 좌표 입니다
+
+// WTM 좌표를 WGS84 좌표계의 좌표로 변환합니다
+geocoder.transCoord(wtmX, wtmY, transCoordCB, {
+    input_coord: kakao.maps.services.Coords.WTM, // 변환을 위해 입력한 좌표계 입니다
+    output_coord: kakao.maps.services.Coords.WGS84 // 변환 결과로 받을 좌표계 입니다
+});
+
+// 좌표 변환 결과를 받아서 처리할 콜백함수 입니다.
+function transCoordCB(result, status) {
+
+    // 정상적으로 검색이 완료됐으면
+    if (status === kakao.maps.services.Status.OK) {
+
+        document.write(result[0].x+','+result[0].y)
+    }
+}
+</script>
+</body>

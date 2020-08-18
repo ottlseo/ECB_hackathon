@@ -1,0 +1,23 @@
+<?php
+  $start_point = $_POST['start_point'];
+  $end_point = $_POST['end_point'];
+?>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>출발지-목적지 Submit_Test</title>
+</head>
+<body>
+    <p id="big_font"><a href="start.html">Safe Return Map</a></p>
+
+    <h1>전달받은 데이터</h1>
+        <ul>
+            <li>출발지: <?php echo $start_point></li>
+            <li>목적지: <?php echo $end_point></li>
+        </ul>
+
+</body>
+</html>
